@@ -14,7 +14,7 @@ nextPage(){
   Future.delayed(const Duration(seconds:5) ,
   (){
     // Get.offAllNamed(Route.navScreen);
-    Get.to(()=>NavView());
+    Get.offAllNamed(Route.navScreen);
   }
   
   );

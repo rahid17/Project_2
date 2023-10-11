@@ -7,7 +7,7 @@ class SplashView extends GetView<SplashController> {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(SplashView());
+    Get.put(SplashController());
     return const Scaffold(
       body: Center(
         child: Column(
