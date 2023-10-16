@@ -1,6 +1,8 @@
 import 'package:get/get.dart';
 import 'package:project_2/app/modules/home/bindings/home_bindings.dart';
 import 'package:project_2/app/modules/home/views/home_view.dart';
+import 'package:project_2/app/modules/login/binding/login_binding.dart';
+import 'package:project_2/app/modules/login/view/login_view.dart';
 import 'package:project_2/app/modules/nav_bar/bindings/nav_binding.dart';
 import 'package:project_2/app/modules/nav_bar/views/nav_view.dart';
 import 'package:project_2/app/modules/profile/bindings/profile_binding.dart';
@@ -10,13 +12,18 @@ import 'package:project_2/app/modules/splash_screen/views/splash_view.dart';
 
 part 'app_routes.dart';
 class AppPages{
-static const initialPage = Route.splashScreen;
+static const initialPage = Routes.splashScreen;
 static final pages = [
   GetPage(
     name: _Path.splashScreen, 
     page: () =>const SplashView(),
     binding: SplashBinding()
  ),
+  GetPage(
+    name: _Path.loginScreen, 
+    page: () => const LoginPage(),
+    binding: LoginBinding()),
+
  GetPage(
     name: _Path.navScreen, 
     page: () =>const NavView(),

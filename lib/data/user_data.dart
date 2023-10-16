@@ -10,6 +10,7 @@ class UserData {
       "password" :password,
     });
   }
+  
   getUser()async{
     await box.read(UserDataKey.userData)?? false;
   }
