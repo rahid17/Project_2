@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:project_2/app/modules/login/controller/login_controller.dart';
+import 'package:project_2/widgets/kAppBar.dart';
 
 import '../../../../widgets/KTextFormField.dart';
 
@@ -13,6 +14,7 @@ class LoginPage extends GetView<LoginController> {
   Widget build(BuildContext context) {
    final controller = Get.put(LoginController());
     return Scaffold(
+      appBar: KAppBar(title: "Input Username"),
       body: Padding(
         padding: const EdgeInsets.all(15.0),
         child: Column(
