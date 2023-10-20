@@ -24,6 +24,7 @@ class LoginPage extends GetView<LoginController> {
             SizedBox(height: 20,),
             KTextFromField(
               controller: controller.textEditingController,
+              label: Text("Enter"),
             ),
             SizedBox(height: 20,),
 

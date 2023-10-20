@@ -3,12 +3,14 @@ import 'package:flutter/material.dart';
 ThemeData darkTheme = ThemeData(
 primaryColor: Colors.white,
 appBarTheme: AppBarTheme(
-  backgroundColor: Colors.grey,
+  backgroundColor: const Color.fromARGB(255, 43, 43, 43),
   titleTextStyle: TextStyle(color: Colors.white, fontSize: 20),
+  
   
 
 ),
  scaffoldBackgroundColor: Colors.black,
+
  
  textTheme: TextTheme(
   headline1: TextStyle(color: Colors.white),

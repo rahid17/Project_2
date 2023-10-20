@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 ThemeData lightTheme = ThemeData(
 primaryColor: Colors.blue,
 appBarTheme: AppBarTheme(
-  backgroundColor: Colors.blue,
+  backgroundColor: Colors.greenAccent,
   titleTextStyle: TextStyle(color: Colors.black, fontSize: 20),
   
 
@@ -16,7 +16,7 @@ appBarTheme: AppBarTheme(
  ),
  elevatedButtonTheme: ElevatedButtonThemeData(
   style: ElevatedButton.styleFrom(
-   backgroundColor: Colors.blue
+   backgroundColor: Colors.greenAccent
   )
  )
 );

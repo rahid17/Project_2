@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:project_2/app/modules/home/controllers/home_controllers.dart';
 import 'package:project_2/app/modules/mainAppPage.dart/controller/mainApp_controller.dart';
+import 'package:project_2/utils/img_url.dart';
+import 'package:project_2/widgets/kAppImage.dart';
 import '../../../../widgets/kAppBar.dart';
 
 
@@ -35,9 +37,24 @@ class HomeView extends GetView<HomeController> {
                     ),
             ),
           ):
-          Padding(
-            padding: EdgeInsets.all(10),
-          
+          SafeArea(
+            child: Padding(
+              padding: EdgeInsets.all(10),
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      KAppImage(imageUrl: KLoadingImg)
+                    ],
+                  )
+                ],
+              ),
+            
+            ),
           )
         ),
     ));

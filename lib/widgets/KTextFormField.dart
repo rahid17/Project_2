@@ -14,6 +14,7 @@ class KTextFromField extends StatelessWidget {
     this.controller,
     this.readonly=false,
     
+    
   });
 final bool isPass;
 final IconData? iconData;
@@ -35,6 +36,7 @@ final bool readonly;
       onTap: () {
         
       },
+      style: TextStyle(color: Colors.green),
       validator: validator  ,
       controller: controller,
       obscureText: obsecureText,
@@ -42,7 +44,9 @@ final bool readonly;
       decoration: InputDecoration(
         
         label: label,
+        labelStyle: TextStyle(color: Colors.grey),
         hintText: hintText,
+        
         
 
         // prefixIcon: iconData==null? 
