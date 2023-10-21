@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:project_2/data/local_data.dart';
@@ -8,7 +6,8 @@ class MyAppController extends GetxController{
   RxBool theme =false.obs;
   @override
   void onInit() {
-     
+     checkTheme();
+    // changeTheme();
     super.onInit();
   }
 

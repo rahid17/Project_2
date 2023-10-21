@@ -21,5 +21,8 @@ appBarTheme: AppBarTheme(
   style: ElevatedButton.styleFrom(
    backgroundColor: Colors.grey
   )
- )
+ ),
+iconTheme: IconThemeData(
+  color: Colors.white
+)
 );

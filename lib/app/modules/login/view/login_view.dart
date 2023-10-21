@@ -29,6 +29,7 @@ class LoginPage extends GetView<LoginController> {
             SizedBox(height: 20,),
 
             ElevatedButton(onPressed: () {
+              print("User submit button pressed");
               controller.checkData();
             } , child: Text("Check"))
           ],
