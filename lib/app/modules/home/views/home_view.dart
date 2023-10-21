@@ -20,26 +20,29 @@ class HomeView extends GetView<HomeController> {
             borderRadius: BorderRadius.circular(20),
             elevation: 20,
             child: Center(
-              child:Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  
-                  SizedBox(
-                    width : Get.width/ 5,
-                    height: Get.width /5,
-                    child: CircularProgressIndicator(),
-                  ),
-                  SizedBox(
-                    height: Get.width/5,
-                  ),
-                 ElevatedButton.icon(onPressed: () {
-                   
-                 }, 
-                 icon: Icon(Icons.cancel), 
-                 label: Text("Cancel"))
-                ]
+              child:Padding(
+                padding: const EdgeInsets.all(50),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    
+                    SizedBox(
+                      width : Get.width/ 5,
+                      height: Get.width /5,
+                      child: CircularProgressIndicator(),
                     ),
+                    SizedBox(
+                      height: Get.width/5,
+                    ),
+                   ElevatedButton.icon(onPressed: () {
+                     
+                   }, 
+                   icon: Icon(Icons.cancel), 
+                   label: Text("Cancel"))
+                  ]
+                      ),
+              ),
             ),
           ),
         )
@@ -82,45 +85,86 @@ class HomeView extends GetView<HomeController> {
                     Ktext(text: "Repos. List", fontsize: 18),
 
                     Obx(
-                      () =>  IconButton(onPressed: () {
-                        controller.gridview.obs;
-                        
-                      }, icon: Icon(Icons.grid_view)),
-                    )
+                            () => IconButton(
+                                onPressed: () {
+                                  controller.gridview.value =
+                                      !controller.gridview.value;
+                                },
+                                icon: Icon(controller.gridview.value
+                                    ? Icons.list
+                                    : Icons.grid_view)),
+                          ),
                   ],
                 ),
                 SizedBox(height: 20,),
                 SizedBox(
-                  height: 100*10,
+                  height: 70*10,
 
-                  child: GridView.builder(
-                    itemCount: 40,
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisSpacing: 20, 
-                      mainAxisSpacing: 20, 
-                      crossAxisCount: 2), 
-                      itemBuilder: (context, index) {
+                  child: 
+                  // GridView.builder(
+                  //   itemCount: 40,
+                  //   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  //     crossAxisSpacing: 20, 
+                  //     mainAxisSpacing: 20, 
+                  //     crossAxisCount: 2), 
+                  //     itemBuilder: (context, index) {
                       
-                       return Container(
-                        width: 50,
+                  //      return Container(
+                  //       width: 50,
+                  //       color: Colors.greenAccent,
+                  //       child: Column(
+                  //         mainAxisAlignment: MainAxisAlignment.center,
+                  //         children: [
+                  //           Ktext(
+                  //           text: "Repo.Name",
+                  //           fontWeight: FontWeight.bold,
+                  //           fontsize: 20,),
+                  //           SizedBox(height: 20,),
+                  //           Ktext(text: "Created:01-01-2023"),
+                  //           SizedBox(height: 10),
+                  //           Ktext(text: "Updated on:02-01-2023")
+                  //         ],
+                  //       ),
+                  //      );
+                  //     },
+                      
+                  //     ),
+
+                  ListView.separated(itemCount: 20,
+                   separatorBuilder: (context, index) {
+                     return SizedBox(
+                      height: 10,
+                     );
+                   }, 
+                   itemBuilder: (context, index) {
+                     return InkWell(
+                      onTap: () {
+                        print("Repos. Clicked ");
+                      },
+                       child: Container(
+                        height: 100,
+                        padding: EdgeInsets.symmetric(horizontal: 20),
                         color: Colors.greenAccent,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
-                            Ktext(
-                            text: "Repo.Name",
-                            fontWeight: FontWeight.bold,
-                            fontsize: 20,),
-                            SizedBox(height: 20,),
-                            Ktext(text: "Created:01-01-2023"),
-                            SizedBox(height: 10),
-                            Ktext(text: "Updated on:02-01-2023")
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Ktext(text: "Repos. name", fontWeight: FontWeight.bold, fontsize: 20,),
+                                Ktext(text: "Created date: 01-01-2023"),
+                                Ktext(text: "Updated on: 03-01-2023"),
+                                Ktext(text: "Last Push: 05-08-2023")
+                              ],
+                            ),
+                            ElevatedButton(onPressed: () {
+                              
+                            }, child: Text("Public"))
                           ],
                         ),
-                       );
-                      },
-                      
-                      ),
+                       ),
+                     );
+                   },)
                 )
               ],
             ),
