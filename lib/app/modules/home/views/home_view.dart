@@ -4,6 +4,8 @@ import 'package:project_2/app/modules/home/controllers/home_controllers.dart';
 import 'package:project_2/widgets/kAppImage.dart';
 import 'package:project_2/widgets/kText.dart';
 import '../../../../widgets/kAppBar.dart';
+import '../../../../widgets/kGridView.dart';
+import '../../../../widgets/kListViewSeparator.dart';
 
 
 class HomeView extends GetView<HomeController> {
@@ -45,9 +47,7 @@ class HomeView extends GetView<HomeController> {
               ),
             ),
           ),
-        )
-        :
-        Padding(
+        ) : Padding(
           padding: EdgeInsets.all(10),
           child: SingleChildScrollView(
             child: Column(
@@ -97,75 +97,14 @@ class HomeView extends GetView<HomeController> {
                   ],
                 ),
                 SizedBox(height: 20,),
-                SizedBox(
-                  height: 70*10,
+                // SizedBox(
+                //   height: 70*10,
 
-                  child: 
-                  // GridView.builder(
-                  //   itemCount: 40,
-                  //   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  //     crossAxisSpacing: 20, 
-                  //     mainAxisSpacing: 20, 
-                  //     crossAxisCount: 2), 
-                  //     itemBuilder: (context, index) {
-                      
-                  //      return Container(
-                  //       width: 50,
-                  //       color: Colors.greenAccent,
-                  //       child: Column(
-                  //         mainAxisAlignment: MainAxisAlignment.center,
-                  //         children: [
-                  //           Ktext(
-                  //           text: "Repo.Name",
-                  //           fontWeight: FontWeight.bold,
-                  //           fontsize: 20,),
-                  //           SizedBox(height: 20,),
-                  //           Ktext(text: "Created:01-01-2023"),
-                  //           SizedBox(height: 10),
-                  //           Ktext(text: "Updated on:02-01-2023")
-                  //         ],
-                  //       ),
-                  //      );
-                  //     },
-                      
-                  //     ),
-
-                  ListView.separated(itemCount: 20,
-                   separatorBuilder: (context, index) {
-                     return SizedBox(
-                      height: 10,
-                     );
-                   }, 
-                   itemBuilder: (context, index) {
-                     return InkWell(
-                      onTap: () {
-                        print("Repos. Clicked ");
-                      },
-                       child: Container(
-                        height: 100,
-                        padding: EdgeInsets.symmetric(horizontal: 20),
-                        color: Colors.greenAccent,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Ktext(text: "Repos. name", fontWeight: FontWeight.bold, fontsize: 20,),
-                                Ktext(text: "Created date: 01-01-2023"),
-                                Ktext(text: "Updated on: 03-01-2023"),
-                                Ktext(text: "Last Push: 05-08-2023")
-                              ],
-                            ),
-                            ElevatedButton(onPressed: () {
-                              
-                            }, child: Text("Public"))
-                          ],
-                        ),
-                       ),
-                     );
-                   },)
-                )
+             
+                  
+                // ),
+                // KGridViewBuilder(),
+                // KListViewSeparetor()
               ],
             ),
           ),

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/state_manager.dart';
-import 'package:project_2/app/router/app_pages.dart';
 
 import '../../home/views/home_view.dart';
 

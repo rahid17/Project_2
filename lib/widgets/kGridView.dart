@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:project_2/widgets/kText.dart';
 
-class KGridView extends StatelessWidget {
-  const KGridView({
+class KGridViewBuilder extends StatelessWidget {
+  const KGridViewBuilder({
     super.key,
   });
 
@@ -38,4 +38,6 @@ class KGridView extends StatelessWidget {
         );
   }
 }
+
+
 
